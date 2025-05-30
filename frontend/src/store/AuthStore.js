@@ -2,8 +2,7 @@
 
 import {create} from 'zustand'
 import axios from 'axios'
-axios.defaults.withCredentials=true
-''
+axios.defaults.withCredentials=true;
 const API_URL='http://localhost:3000/api/auth'
 export const useAuthStore=create((set)=>({
     user:null,
@@ -16,7 +15,7 @@ export const useAuthStore=create((set)=>({
 
 
     signup:async(email,password,name)=>{
-        set({isLoadind:true,error:null});
+        set({isLoading:true,error:null});
         try {
 
             const response=await axios.post(`${API_URL}/register`,{email,password,name});
